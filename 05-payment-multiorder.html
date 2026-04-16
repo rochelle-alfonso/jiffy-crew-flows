@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiffy Crew — Payment &amp; Multi-Order</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Onest', sans-serif; background: #f0f0f0; padding: 40px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+  .screen-wrapper { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .screen-label { font-size: 14px; font-weight: 600; color: #1A1A2E; }
+  .phone-frame { width: 390px; min-height: 844px; background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+</style>
+</head>
+<body>
+  <h1 style="width:100%; text-align:center; font-size:24px; color:#1A1A2E; margin-bottom:20px;">Payment &amp; Multi-Order</h1>
+
+  <!-- Screen 1: COD Delivery (2CH-0) -->
+  <div class="screen-wrapper">
+    <div class="screen-label">01 — COD Delivery</div>
+    <div class="phone-frame">
+      <div style="background-color: #FFFFFF; box-sizing: border-box; display: flex; flex-direction: column; font-size: 12px; font-synthesis: none; height: 844px; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow: clip; -webkit-font-smoothing: antialiased; width: 390px;">
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-bottom: 8px; padding-left: 24px; padding-right: 24px; padding-top: 14px;">
+          <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">9:41</div>
+          <div style="align-items: center; box-sizing: border-box; display: flex; gap: 5px;">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#000000" style="opacity: 0.3;" />
+              <rect x="4.5" y="5.5" width="3" height="6.5" rx="0.5" fill="#000000" style="opacity: 0.5;" />
+              <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#000000" style="opacity: 0.7;" />
+              <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#000000" />
+            </svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M8 9.6a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM8 6c1.82 0 3.47.74 4.66 1.93a.6.6 0 01-.85.85A5.38 5.38 0 008 7.2c-1.5 0-2.85.6-3.81 1.58a.6.6 0 01-.85-.85A6.58 6.58 0 018 6z" />
+            </svg>
+            <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <rect x="0.5" y="0.5" width="22" height="12" rx="2.5" stroke="#00000059" />
+              <rect x="2" y="2" width="14" height="9" rx="1.5" fill="#000000" />
+              <path d="M24 4.5v4a2 2 0 000-4z" fill="#000000" style="opacity: 0.4;" />
+            </svg>
+          </div>
+        </div>
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-inline: 20px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; gap: 16px;">
+            <div style="align-items: center; background-color: #FBFBFB; border-radius: 18px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; width: 36px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </div>
+            <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 500; line-height: 24px;">Delivery Details</div>
+          </div>
+          <div style="align-items: center; background-color: #000000; border-radius: 18px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; width: 36px;">
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 700; line-height: 18px;">?</div>
+          </div>
+        </div>
+        <div style="align-items: start; background-image: linear-gradient(in oklab 135deg, oklab(98.4% 0.003 0.013) 0%, oklab(96.9% 0.005 0.028) 100%); border-radius: 16px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 12px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 16px; padding-inline: 20px;">
+          <div style="box-sizing: border-box; color: #000000; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 24px; line-height: 30px;">&#128522;</div>
+          <div style="box-sizing: border-box;">
+            <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 20px;">Smile &amp; greet the customer!</div>
+            <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 18px; margin-top: 2px;">Say "Good morning" — it boosts your rating</div>
+          </div>
+        </div>
+        <div style="box-sizing: border-box; display: flex; flex-shrink: 0; gap: 8px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px;">
+          <div style="align-items: start; background-color: #EDF7ED; border-radius: 14px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 127px; height: fit-content; padding-block: 14px; padding-inline: 14px; width: 350px;">
+            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; gap: 2px; width: 81px;">
+              <div style="align-self: stretch; box-sizing: border-box; color: #00A344; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Time left</div>
+              <div style="align-self: stretch; box-sizing: border-box; color: #00A344; font-family: 'Onest', system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -1px; line-height: 34px; margin-top: 2px;">05:00</div>
+            </div>
+            <div style="align-items: center; background-color: #D4EFDB; border-radius: 14px; box-sizing: border-box; display: flex; height: 28px; padding-inline: 14px; width: fit-content;">
+              <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">BEFORE TIME</div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: start; background-color: #FBFBFB; border-radius: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 16px; padding-inline: 20px; width: 350px;">
+          <div style="align-items: center; align-self: stretch; box-sizing: border-box; display: flex; justify-content: space-between;">
+            <div style="box-sizing: border-box;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; text-transform: uppercase;">Customer</div>
+              <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px; margin-top: 4px;">Tanushi Sharma</div>
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 16px; margin-top: 2px;">96, GST Road, Alandur, Chennai</div>
+            </div>
+            <div style="align-items: center; background-color: #00A344; border-radius: 22px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 44px; justify-content: center; width: 44px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" stroke="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+            </div>
+          </div>
+          <div style="align-self: stretch; border-top-color: #F5F5F7; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; display: flex; gap: 16px; padding-left: 0; padding-right: 0; padding-top: 16px;">
+            <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Order ID</div>
+              <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 18px; margin-top: 4px;">1342759563</div>
+            </div>
+            <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Payment</div>
+              <div style="box-sizing: border-box; color: #FF6D00; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 18px; margin-top: 4px;">COD</div>
+            </div>
+            <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Amount</div>
+              <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 700; line-height: 18px; margin-top: 4px;">&#8377;146</div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: flex-start; background-color: #F5F8FD; border-radius: 12px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 8px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 12px; padding-inline: 16px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px; flex-shrink: 0;">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+          <div style="box-sizing: border-box; color: #2563EB; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 18px;">Leave at door. Ring doorbell twice.</div>
+        </div>
+        <div style="box-sizing: border-box; flex-shrink: 0; padding-left: 24px; padding-right: 24px; padding-top: 16px;">
+          <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 18px; margin-bottom: 12px;">Collect Payment</div>
+        </div>
+        <div style="align-items: center; background-color: #F0F4FF; border-color: #2563EB; border-radius: 16px; border-style: solid; border-width: 2px; box-sizing: border-box; display: flex; flex-shrink: 0; justify-content: space-between; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 0px; padding-block: 16px; padding-inline: 20px;">
+          <div style="box-sizing: border-box;">
+            <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Collect &#8377;146 via UPI</div>
+            <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px; margin-top: 2px;">Show QR to customer</div>
+          </div>
+          <div style="align-items: center; background-color: #2563EB; border-radius: 12px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 24px; justify-content: center; width: 24px;">
+            <div style="background-color: #FFFFFF; border-radius: 4px; box-sizing: border-box; flex-shrink: 0; height: 8px; width: 8px;"></div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #FBFBFB; border-color: #F0F0F2; border-radius: 16px; border-style: solid; border-width: 1.5px; box-sizing: border-box; display: flex; flex-shrink: 0; justify-content: space-between; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 8px; padding-block: 16px; padding-inline: 20px;">
+          <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 500; line-height: 18px;">Collect Cash &#8377;146</div>
+          <div style="border-color: #E0E0E0; border-radius: 12px; border-style: solid; border-width: 2px; box-sizing: border-box; flex-shrink: 0; height: 24px; width: 24px;"></div>
+        </div>
+        <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;"></div>
+        <div style="box-sizing: border-box; flex-shrink: 0; padding-bottom: 24px; padding-left: 20px; padding-right: 20px;">
+          <div style="align-items: center; background-color: #2663EB; border-radius: 16px; box-sizing: border-box; display: flex; gap: 8px; height: 56px; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px;">Delivered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Collect Cash (2CI-0) -->
+  <div class="screen-wrapper">
+    <div class="screen-label">02 — Collect Cash</div>
+    <div class="phone-frame">
+      <div style="background-color: #FFFFFF; box-sizing: border-box; display: flex; flex-direction: column; font-size: 12px; font-synthesis: none; height: 844px; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow: clip; -webkit-font-smoothing: antialiased; width: 390px;">
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-bottom: 8px; padding-left: 24px; padding-right: 24px; padding-top: 14px;">
+          <div style="box-sizing: border-box; color: #000000; display: inline-block; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; line-height: 18px; white-space-collapse: preserve; width: max-content;">9:41</div>
+          <div style="align-items: center; box-sizing: border-box; display: flex; gap: 5px;">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <rect x="0" y="8" width="3" height="4" rx="0.5" fill="#000000" style="opacity: 0.3;" />
+              <rect x="4.5" y="5.5" width="3" height="6.5" rx="0.5" fill="#000000" style="opacity: 0.5;" />
+              <rect x="9" y="3" width="3" height="9" rx="0.5" fill="#000000" style="opacity: 0.7;" />
+              <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#000000" />
+            </svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M8 9.6a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM8 6c1.82 0 3.47.74 4.66 1.93a.6.6 0 01-.85.85A5.38 5.38 0 008 7.2c-1.5 0-2.85.6-3.81 1.58a.6.6 0 01-.85-.85A6.58 6.58 0 018 6z" />
+            </svg>
+            <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <rect x="0.5" y="0.5" width="22" height="12" rx="2.5" stroke="#00000059" />
+              <rect x="2" y="2" width="14" height="9" rx="1.5" fill="#000000" />
+              <path d="M24 4.5v4a2 2 0 000-4z" fill="#000000" style="opacity: 0.4;" />
+            </svg>
+          </div>
+        </div>
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-basis: 0%; flex-direction: column; flex-grow: 1; flex-shrink: 1; justify-content: center; padding-inline: 32px;">
+          <div style="align-items: center; background-color: #EDF7ED; border-radius: 40px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 80px; justify-content: center; width: 80px;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#00A344" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            </svg>
+          </div>
+          <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.8px; line-height: 34px; margin-top: 24px; text-align: center;">Collect Cash</div>
+          <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; line-height: 20px; margin-top: 8px; text-align: center;">Please collect the exact amount from the customer</div>
+          <div style="background-color: #FBFBFB; border-radius: 20px; box-sizing: border-box; margin-top: 32px; padding-block: 24px; padding-inline: 24px; width: 100%;">
+            <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 18px; text-align: center;">Amount to Collect</div>
+            <div style="box-sizing: border-box; color: #00A344; font-family: 'Onest', system-ui, sans-serif; font-size: 42px; font-weight: 700; letter-spacing: -2px; line-height: 42px; margin-top: 8px; text-align: center;">&#8377;146</div>
+            <div style="background-color: #E0E0E0; box-sizing: border-box; height: 1px; margin-bottom: 20px; margin-left: 0px; margin-right: 0px; margin-top: 20px;"></div>
+            <div style="box-sizing: border-box; display: flex; justify-content: space-between; padding-block: 4px;">
+              <div style="box-sizing: border-box; color: #999999; display: inline-block; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; text-align: center; width: max-content;">Order Total</div>
+              <div style="box-sizing: border-box; color: #000000; display: inline-block; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; text-align: center; width: max-content;">&#8377;146</div>
+            </div>
+            <div style="box-sizing: border-box; display: flex; justify-content: space-between; padding-block: 4px;">
+              <div style="box-sizing: border-box; color: #999999; display: inline-block; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; text-align: center; width: max-content;">Discount</div>
+              <div style="box-sizing: border-box; color: #000000; display: inline-block; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; text-align: center; width: max-content;">&#8377;0</div>
+            </div>
+          </div>
+          <div style="align-items: flex-start; background-color: #FFF8F5; border-radius: 12px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 8px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 12px; padding-inline: 16px; width: 306px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6D00" stroke-width="2" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+            <div style="box-sizing: border-box; color: #FF6D00; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 18px;">Do not leave without collecting payment</div>
+          </div>
+        </div>
+        <div style="box-sizing: border-box; flex-shrink: 0; padding-bottom: 24px; padding-left: 20px; padding-right: 20px;">
+          <div style="align-items: center; background-color: #2663EB; border-radius: 16px; box-sizing: border-box; display: flex; gap: 8px; height: 56px; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px; width: max-content;">Cash Collected</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Prepaid Delivery (3BI-0) -->
+  <div class="screen-wrapper">
+    <div class="screen-label">03 — Prepaid Delivery</div>
+    <div class="phone-frame">
+      <div style="background-color: #FFFFFF; box-sizing: border-box; display: flex; flex-direction: column; font-size: 12px; font-synthesis: none; height: 844px; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow: clip; -webkit-font-smoothing: antialiased; width: 390px;">
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-bottom: 8px; padding-left: 24px; padding-right: 24px; padding-top: 14px;">
+          <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">9:41</div>
+          <div style="align-items: center; box-sizing: border-box; display: flex; gap: 5px;">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><rect x="0" y="8" width="3" height="4" rx="0.5" fill="#000000" style="opacity:0.3"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="0.5" fill="#000000" style="opacity:0.5"/><rect x="9" y="3" width="3" height="9" rx="0.5" fill="#000000" style="opacity:0.7"/><rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="#000000"/></svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M8 9.6a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM8 6c1.82 0 3.47.74 4.66 1.93a.6.6 0 01-.85.85A5.38 5.38 0 008 7.2c-1.5 0-2.85.6-3.81 1.58a.6.6 0 01-.85-.85A6.58 6.58 0 018 6z"/></svg>
+            <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><rect x="0.5" y="0.5" width="22" height="12" rx="2.5" stroke="#00000059"/><rect x="2" y="2" width="14" height="9" rx="1.5" fill="#000000"/><path d="M24 4.5v4a2 2 0 000-4z" fill="#000000" style="opacity:0.4"/></svg>
+          </div>
+        </div>
+        <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-inline: 20px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; gap: 16px;">
+            <div style="align-items: center; background-color: #FBFBFB; border-radius: 18px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; width: 36px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M15 18l-6-6 6-6"/></svg>
+            </div>
+            <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 500; line-height: 20px;">Delivery Details</div>
+          </div>
+          <div style="align-items: center; background-color: #000000; border-radius: 18px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 36px; justify-content: center; width: 36px;">
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 700; line-height: 18px;">?</div>
+          </div>
+        </div>
+        <div style="align-items: start; background-image: linear-gradient(in oklab 135deg, oklab(98.4% 0.003 0.013) 0%, oklab(96.9% 0.005 0.028) 100%); border-radius: 16px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 12px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 16px; padding-inline: 20px;">
+          <div style="box-sizing: border-box; color: #000000; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 24px; line-height: 30px;">&#128522;</div>
+          <div style="box-sizing: border-box;">
+            <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 18px;">Smile &amp; greet the customer!</div>
+            <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 16px; margin-top: 2px;">Say "Good morning" — it boosts your rating</div>
+          </div>
+        </div>
+        <div style="box-sizing: border-box; display: flex; flex-shrink: 0; gap: 8px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px;">
+          <div style="align-items: start; background-color: #EDF7ED; border-radius: 14px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 162px; height: 82px; padding-block: 14px; padding-inline: 14px; width: 350px;">
+            <div style="align-items: start; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px; width: fit-content;">
+              <div style="align-self: stretch; box-sizing: border-box; color: #00A344; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Time left</div>
+              <div style="box-sizing: border-box; color: #00A344; font-family: 'Onest', system-ui, sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -1px; line-height: 34px; margin-top: 2px; width: 77px;">08:30</div>
+            </div>
+            <div style="align-items: center; background-color: #D4EFDB; border-radius: 14px; box-sizing: border-box; display: flex; height: 28px; padding-inline: 14px; width: fit-content;">
+              <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">ON TIME</div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: start; background-color: #FBFBFB; border-radius: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 19px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 16px; padding-inline: 20px; width: 350px;">
+          <div style="align-items: center; align-self: stretch; box-sizing: border-box; display: flex; justify-content: space-between;">
+            <div style="box-sizing: border-box;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; text-transform: uppercase;">Customer</div>
+              <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px; margin-top: 4px;">Arjun Reddy</div>
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 16px; margin-top: 2px;">B-204, Prestige Lakeside, Whitefield</div>
+            </div>
+            <div style="align-items: center; background-color: #00A344; border-radius: 22px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 44px; justify-content: center; width: 44px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" stroke="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+          </div>
+          <div style="align-self: stretch; border-top-color: #F5F5F7; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; display: flex; gap: 16px; padding-left: 0; padding-right: 0; padding-top: 16px;">
+            <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Order ID</div>
+              <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 18px; margin-top: 4px;">1342759578</div>
+            </div>
+            <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Payment</div>
+              <div style="box-sizing: border-box; color: #00A344; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 18px; margin-top: 4px;">Prepaid</div>
+            </div>
+            <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;">
+              <div style="box-sizing: border-box; color: #999999; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">Items</div>
+              <div style="box-sizing: border-box; color: #000000; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 500; line-height: 18px; margin-top: 4px;">5 items</div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: flex-start; background-color: #F5F8FD; border-radius: 12px; box-sizing: border-box; display: flex; flex-shrink: 0; gap: 8px; margin-bottom: 0px; margin-left: 20px; margin-right: 20px; margin-top: 12px; padding-block: 12px; padding-inline: 16px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px; flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div style="box-sizing: border-box; color: #2563EB; flex-shrink: 0; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 18px; width: 296px;">Hand deliver to security guard at gate. No cash collection needed.</div>
+        </div>
+        <div style="box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1;"></div>
+        <div style="box-sizing: border-box; flex-shrink: 0; padding-bottom: 24px; padding-left: 20px; padding-right: 20px;">
+          <div style="align-items: center; background-color: #00A344; border-radius: 16px; box-sizing: border-box; display: flex; gap: 8px; height: 56px; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M20 6L9 17l-5-5"/></svg>
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px;">Delivered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 4: New Trip Multi (ALR-0) -->
+  <div class="screen-wrapper">
+    <div class="screen-label">04 — New Trip Multi</div>
+    <div class="phone-frame">
+      <div style="background-color: #FFFFFF; box-sizing: border-box; display: flex; flex-direction: column; font-size: 12px; font-synthesis: none; height: 844px; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow: clip; -webkit-font-smoothing: antialiased; width: 390px;">
+        <div style="box-sizing: border-box; display: flex; flex-direction: column; width: 390px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-left: 24px; padding-right: 24px; padding-top: 14px;">
+            <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">9:41</div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 6px;">
+              <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A2E"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="#1A1A2E"/><rect x="9" y="0" width="3" height="12" rx="1" fill="#1A1A2E"/><rect x="13.5" y="0" width="3" height="12" rx="1" fill="#1A1A2E"/></svg>
+              <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M7.5 3.5C9.4 3.5 11.1 4.3 12.3 5.5L13.7 4.1C12.1 2.5 9.9 1.5 7.5 1.5S2.9 2.5 1.3 4.1L2.7 5.5C3.9 4.3 5.6 3.5 7.5 3.5Z" fill="#1A1A2E"/><circle cx="7.5" cy="10" r="1.5" fill="#1A1A2E"/><path d="M7.5 6C8.8 6 10 6.5 10.9 7.3L12.3 5.9C11 4.7 9.3 4 7.5 4S4 4.7 2.7 5.9L4.1 7.3C5 6.5 6.2 6 7.5 6Z" fill="#1A1A2E"/></svg>
+              <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><rect x="0.5" y="0.5" width="22" height="12" rx="3.5" stroke="#1A1A2E59"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#1A1A2E"/><path d="M24 4.5V8.5C25.1 8.2 25.1 4.8 24 4.5Z" fill="#1A1A2E66"/></svg>
+            </div>
+          </div>
+          <div style="align-items: center; box-sizing: border-box; display: flex; justify-content: space-between; padding-block: 8px; padding-inline: 16px;">
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 8px;">
+              <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 18px; font-weight: 600; line-height: 22px;">New Trip</div>
+              <div style="background-color: #EDF7ED; border-radius: 8px; box-sizing: border-box; padding-block: 2px; padding-inline: 10px;">
+                <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 700; line-height: 18px;">3 orders</div>
+              </div>
+            </div>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M18 6L6 18M6 6l12 12" stroke="#71717A" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #EDF7ED; border-radius: 12px; box-sizing: border-box; display: flex; justify-content: space-between; margin-bottom: 0px; margin-left: 16px; margin-right: 16px; margin-top: 8px; padding-block: 16px; padding-inline: 16px;">
+          <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;">
+            <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px;">TOTAL EARNINGS</div>
+            <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 24px; font-weight: 700; line-height: 30px;">&#8377;80</div>
+          </div>
+          <div style="box-sizing: border-box; display: flex; gap: 16px;">
+            <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;">
+              <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">DISTANCE</div>
+              <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">1.9 km</div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;">
+              <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">EST. TIME</div>
+              <div style="box-sizing: border-box; color: #FF6D00; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">35 min</div>
+            </div>
+          </div>
+        </div>
+        <div style="box-sizing: border-box; padding-left: 16px; padding-right: 16px; padding-top: 20px;">
+          <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Delivery Route</div>
+        </div>
+        <!-- Stop 1 -->
+        <div style="box-sizing: border-box; display: flex; gap: 12px; margin-left: 16px; margin-right: 16px; margin-top: 12px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; width: 32px;">
+            <div style="align-items: center; background-color: #E4EDFE; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px;">
+              <div style="box-sizing: border-box; color: #2663EB; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">1</div>
+            </div>
+            <div style="background-color: #F5F5F7; box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1; min-height: 40px; width: 2px;"></div>
+          </div>
+          <div style="box-sizing: border-box; display: flex; flex-basis: 0%; flex-direction: column; flex-grow: 1; flex-shrink: 1; gap: 8px; padding-bottom: 16px;">
+            <div style="align-items: center; box-sizing: border-box; display: flex; justify-content: space-between;">
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;">
+                <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Tanushi Sharma</div>
+                <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">96, GST Road, Alandur</div>
+              </div>
+              <div style="background-color: #E4EDFE; border-radius: 6px; box-sizing: border-box; padding-block: 3px; padding-inline: 8px;">
+                <div style="box-sizing: border-box; color: #2663EB; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 600; line-height: 12px;">Ongoing</div>
+              </div>
+            </div>
+            <div style="box-sizing: border-box; display: flex; gap: 16px;">
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">DISTANCE</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">200m</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">PAYMENT</div><div style="box-sizing: border-box; color: #FF6D00; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">COD &#8377;146</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">ITEMS</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">8</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">EARN</div><div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">&#8377;25</div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Stop 2 -->
+        <div style="box-sizing: border-box; display: flex; gap: 12px; margin-left: 16px; margin-right: 16px; margin-top: 0px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; width: 32px;">
+            <div style="align-items: center; background-color: #EDF7ED; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px;">
+              <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">2</div>
+            </div>
+            <div style="background-color: #F5F5F7; box-sizing: border-box; flex-basis: 0%; flex-grow: 1; flex-shrink: 1; min-height: 40px; width: 2px;"></div>
+          </div>
+          <div style="box-sizing: border-box; display: flex; flex-basis: 0%; flex-direction: column; flex-grow: 1; flex-shrink: 1; gap: 8px; padding-bottom: 16px;">
+            <div style="align-items: center; box-sizing: border-box; display: flex; justify-content: space-between;">
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;">
+                <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Arjun Reddy</div>
+                <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">42, MG Road, Koramangala</div>
+              </div>
+              <div style="background-color: #EDF7ED; border-radius: 6px; box-sizing: border-box; padding-block: 3px; padding-inline: 8px;">
+                <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 600; line-height: 12px;">Ready</div>
+              </div>
+            </div>
+            <div style="box-sizing: border-box; display: flex; gap: 16px;">
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">DISTANCE</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">200m</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">PAYMENT</div><div style="box-sizing: border-box; color: #FF6D00; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">COD &#8377;82</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">ITEMS</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">5</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">EARN</div><div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">&#8377;25</div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Stop 3 -->
+        <div style="box-sizing: border-box; display: flex; gap: 12px; margin-left: 16px; margin-right: 16px; margin-top: 0px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-direction: column; flex-shrink: 0; width: 32px;">
+            <div style="align-items: center; background-color: #EDF7ED; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px;">
+              <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">3</div>
+            </div>
+          </div>
+          <div style="box-sizing: border-box; display: flex; flex-basis: 0%; flex-direction: column; flex-grow: 1; flex-shrink: 1; gap: 8px;">
+            <div style="align-items: center; box-sizing: border-box; display: flex; justify-content: space-between;">
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;">
+                <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Priya Menon</div>
+                <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; line-height: 16px;">8, Brigade Rd, Ashok Nagar</div>
+              </div>
+              <div style="background-color: #EDF7ED; border-radius: 6px; box-sizing: border-box; padding-block: 3px; padding-inline: 8px;">
+                <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 600; line-height: 12px;">Ready</div>
+              </div>
+            </div>
+            <div style="box-sizing: border-box; display: flex; gap: 16px;">
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">DISTANCE</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">1.5 km</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">PAYMENT</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">Prepaid</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">ITEMS</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">3</div></div>
+              <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 1px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 10px; font-weight: 500; line-height: 12px;">EARN</div><div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 12px; font-weight: 600; line-height: 16px;">&#8377;30</div></div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #F5F8FD; border-radius: 12px; box-sizing: border-box; display: flex; gap: 10px; margin-bottom: 0px; margin-left: 16px; margin-right: 16px; margin-top: 20px; padding-block: 12px; padding-inline: 16px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10" stroke="#2563EB" stroke-width="2"/><path d="M12 16v-4m0-4h.01" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>
+          <div style="box-sizing: border-box; color: #4B5563; display: inline-block; flex-basis: 0%; flex-grow: 1; flex-shrink: 1; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 16px;">Orders will be delivered in sequence. Pickup all from Koramangala Hub.</div>
+        </div>
+        <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; margin-top: auto; padding-bottom: 32px; padding-left: 16px; padding-right: 16px;">
+          <div style="align-items: center; background-color: #2563EB; border-radius: 16px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 56px; justify-content: center;">
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px;">Accept All 3 Orders</div>
+          </div>
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 44px; justify-content: center;">
+            <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 18px;">Decline Trip</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 5: Order Cancelled (ALQ-0) -->
+  <div class="screen-wrapper">
+    <div class="screen-label">05 — Order Cancelled</div>
+    <div class="phone-frame">
+      <div style="background-color: #FFFFFF; box-sizing: border-box; display: flex; flex-direction: column; font-size: 12px; font-synthesis: none; height: 844px; line-height: 16px; -moz-osx-font-smoothing: grayscale; overflow: clip; -webkit-font-smoothing: antialiased; width: 390px;">
+        <div style="box-sizing: border-box; display: flex; flex-direction: column; width: 390px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; flex-shrink: 0; height: 48px; justify-content: space-between; padding-left: 24px; padding-right: 24px; padding-top: 14px;">
+            <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">9:41</div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 6px;">
+              <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A2E"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="#1A1A2E"/><rect x="9" y="0" width="3" height="12" rx="1" fill="#1A1A2E"/><rect x="13.5" y="0" width="3" height="12" rx="1" fill="#1A1A2E"/></svg>
+              <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M7.5 3.5C9.4 3.5 11.1 4.3 12.3 5.5L13.7 4.1C12.1 2.5 9.9 1.5 7.5 1.5S2.9 2.5 1.3 4.1L2.7 5.5C3.9 4.3 5.6 3.5 7.5 3.5Z" fill="#1A1A2E"/><circle cx="7.5" cy="10" r="1.5" fill="#1A1A2E"/><path d="M7.5 6C8.8 6 10 6.5 10.9 7.3L12.3 5.9C11 4.7 9.3 4 7.5 4S4 4.7 2.7 5.9L4.1 7.3C5 6.5 6.2 6 7.5 6Z" fill="#1A1A2E"/></svg>
+              <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><rect x="0.5" y="0.5" width="22" height="12" rx="3.5" stroke="#1A1A2E59"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#1A1A2E"/><path d="M24 4.5V8.5C25.1 8.2 25.1 4.8 24 4.5Z" fill="#1A1A2E66"/></svg>
+            </div>
+          </div>
+          <div style="align-items: center; box-sizing: border-box; display: flex; gap: 16px; padding-block: 8px; padding-inline: 16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M15 18L9 12L15 6" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 18px; font-weight: 600; line-height: 22px;">At Store</div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #FEF2F2; border-radius: 12px; box-sizing: border-box; display: flex; gap: 12px; margin-bottom: 0px; margin-left: 16px; margin-right: 16px; margin-top: 8px; padding-block: 14px; padding-inline: 16px;">
+          <div style="align-items: center; background-color: #D92D20; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 40px; justify-content: center; width: 40px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path d="M18 6L6 18M6 6l12 12" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;">
+            <div style="box-sizing: border-box; color: #D92D20; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Order Cancelled</div>
+            <div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 16px;">Customer cancelled. Pick up next order from Shelf 12.</div>
+          </div>
+        </div>
+        <div style="background-color: #FBFBFB; border-radius: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; margin-bottom: 0px; margin-left: 16px; margin-right: 16px; margin-top: 16px; opacity: 0.4; padding-block: 16px; padding-inline: 16px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; justify-content: space-between;">
+            <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 18px;">Order #1342759563</div>
+            <div style="background-color: #FEF2F2; border-radius: 8px; box-sizing: border-box; padding-block: 3px; padding-inline: 10px;">
+              <div style="box-sizing: border-box; color: #D92D20; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 600; line-height: 14px;">CANCELLED</div>
+            </div>
+          </div>
+          <div style="box-sizing: border-box; display: flex; gap: 20px;">
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">ITEMS</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">3</div></div>
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">PAYMENT</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">COD &#8377;146</div></div>
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">DISTANCE</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">1.2 km</div></div>
+          </div>
+        </div>
+        <div style="box-sizing: border-box; padding-left: 16px; padding-right: 16px; padding-top: 20px;">
+          <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Next Order</div>
+        </div>
+        <div style="background-color: #FBFBFB; border-radius: 12px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; margin-bottom: 0px; margin-left: 16px; margin-right: 16px; margin-top: 8px; padding-block: 16px; padding-inline: 16px;">
+          <div style="align-items: center; box-sizing: border-box; display: flex; justify-content: space-between;">
+            <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 18px;">Order #1342759564</div>
+            <div style="background-color: #EDF7ED; border-radius: 8px; box-sizing: border-box; padding-block: 3px; padding-inline: 10px;">
+              <div style="box-sizing: border-box; color: #00A344; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 600; line-height: 14px;">Ready</div>
+            </div>
+          </div>
+          <div style="box-sizing: border-box; display: flex; gap: 16px;">
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">SHELF</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">Shelf 12</div></div>
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">ITEMS</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">3</div></div>
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">DISTANCE</div><div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">1.2 km</div></div>
+            <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px;"><div style="box-sizing: border-box; color: #71717A; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 11px; font-weight: 500; line-height: 14px;">PAYMENT</div><div style="box-sizing: border-box; color: #FF6D00; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 600; line-height: 16px;">COD</div></div>
+          </div>
+          <div style="background-color: #F5F5F7; box-sizing: border-box; flex-shrink: 0; height: 1px;"></div>
+          <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 8px;">
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 10px;">
+              <div style="align-items: center; background-color: #FFF6ED; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px;">
+                <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; line-height: 18px;">&#129427;</div>
+              </div>
+              <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 16px;">Aashirvaad Atta, 500g &#215;1</div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 10px;">
+              <div style="align-items: center; background-color: #FECACA; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px;">
+                <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; line-height: 18px;">&#127836;</div>
+              </div>
+              <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 16px;">Rice Stick Noodle, 500g &#215;1</div>
+            </div>
+            <div style="align-items: center; box-sizing: border-box; display: flex; gap: 10px;">
+              <div style="align-items: center; background-color: #EDF7ED; border-radius: 50%; box-sizing: border-box; display: flex; flex-shrink: 0; height: 32px; justify-content: center; width: 32px;">
+                <div style="box-sizing: border-box; color: #000000; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 14px; line-height: 18px;">&#129380;</div>
+              </div>
+              <div style="box-sizing: border-box; color: #1A1A2E; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 16px;">Drink Mix Range, 500g &#215;1</div>
+            </div>
+          </div>
+        </div>
+        <div style="align-items: center; background-color: #F5F8FD; border-radius: 12px; box-sizing: border-box; display: flex; gap: 10px; margin-bottom: 0px; margin-left: 16px; margin-right: 16px; margin-top: 12px; padding-block: 12px; padding-inline: 16px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10" stroke="#2563EB" stroke-width="2"/><path d="M12 16v-4m0-4h.01" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>
+          <div style="box-sizing: border-box; color: #4B5563; display: inline-block; flex-basis: 0%; flex-grow: 1; flex-shrink: 1; font-family: 'Onest', system-ui, sans-serif; font-size: 13px; line-height: 16px;">Cancelled order won't affect your rating or earnings.</div>
+        </div>
+        <div style="box-sizing: border-box; display: flex; flex-direction: column; margin-top: auto; padding-bottom: 32px; padding-left: 16px; padding-right: 16px;">
+          <div style="align-items: center; background-color: #2563EB; border-radius: 16px; box-sizing: border-box; display: flex; flex-shrink: 0; height: 56px; justify-content: center;">
+            <div style="box-sizing: border-box; color: #FFFFFF; display: inline-block; font-family: 'Onest', system-ui, sans-serif; font-size: 16px; font-weight: 600; line-height: 20px;">View Next Order</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="prototype.js"></script>
+</body>
+</html>

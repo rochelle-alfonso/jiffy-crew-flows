@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiffy Crew - Rider Onboarding Screens</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Onest', system-ui, sans-serif;
+    background: #f0f0f5;
+    padding: 40px 20px;
+  }
+  h1 { text-align: center; font-size: 28px; color: #1A1A2E; margin-bottom: 8px; }
+  .subtitle { text-align: center; color: #71717A; font-size: 14px; margin-bottom: 40px; }
+  .grid {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 32px; max-width: 1800px; margin: 0 auto;
+  }
+  .screen-card { display: flex; flex-direction: column; align-items: center; }
+  .screen-label { font-size: 13px; font-weight: 600; color: #1A1A2E; margin-bottom: 4px; text-align: center; }
+  .screen-id { font-size: 11px; color: #999; margin-bottom: 8px; font-family: monospace; }
+  .phone-frame {
+    width: 390px; height: 844px; border-radius: 40px; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff; position: relative;
+    transform: scale(0.48); transform-origin: top center; margin-bottom: -438px;
+  }
+  .screen-content { width: 390px; height: 844px; overflow: hidden; }
+</style>
+</head>
+<body>
+<h1>Jiffy Crew - Rider App Onboarding</h1>
+<p class="subtitle">23 screens from Paper design file</p>
+<div class="grid" id="grid"></div>
+<script>
+const screens = [
+  {id:"7MB-0",label:"4.0 Login"},{id:"2CD-0",label:"4.1 Language"},{id:"2CE-0",label:"4.2 OTP"},
+  {id:"2CF-0",label:"4.3 Basic Info"},{id:"7NG-0",label:"4.0b Role"},{id:"7OJ-0",label:"4.0c Agreement"},
+  {id:"7PT-0",label:"4.0d Referral"},{id:"7QW-0",label:"4.0e PAN Card"},{id:"2PY-0",label:"4.5 Emergency Contact"},
+  {id:"2PZ-0",label:"4.6 Selfie Verify"},{id:"2Q0-0",label:"4.7 Aadhaar"},{id:"2Q1-0",label:"4.8 Vehicle Details"},
+  {id:"2Q2-0",label:"4.9 Bank Account"},{id:"FDS-0",label:"4.9c Home Location"},{id:"2Q3-0",label:"4.10 Fee Payment"},
+  {id:"84T-0",label:"4.10b Payment Success"},{id:"84S-0",label:"4.11b Insurance"},{id:"7U2-0",label:"4.11 Training Hub"},
+  {id:"7U3-0",label:"4.12 Training Quiz"},{id:"7XQ-0",label:"4.13 Uniform"},{id:"7XR-0",label:"4.14 First Shift"},
+  {id:"7XS-0",label:"4.15 Ready"},{id:"2CG-0",label:"4.4 Under Review"}
+];
+
+function c(jsx){
+  let h=jsx.replace(/^\s*\(\s*/,'').replace(/\s*\)\s*$/,'');
+  let r='',i=0;
+  while(i<h.length){
+    let p=h.indexOf('style={{',i);
+    if(p===-1){r+=h.substring(i);break;}
+    r+=h.substring(i,p);
+    let s=p+8,d=2,j=s;
+    while(j<h.length&&d>0){if(h[j]==='{')d++;else if(h[j]==='}')d--;j++;}
+    let sc=h.substring(s,j-2),props=[];
+    const rx=/(\w+):\s*(?:'([^']*)'|"([^"]*)"|(\d+(?:\.\d+)?))/g;
+    let m;while((m=rx.exec(sc))!==null){
+      let k=m[1],v=m[2]!==undefined?m[2]:(m[3]!==undefined?m[3]:m[4]);
+      let ck=k.replace(/([A-Z])/g,x=>'-'+x.toLowerCase());
+      props.push(ck+':'+v);
+    }
+    r+='style="'+props.join(';')+'"';i=j;
+  }
+  h=r;
+  h=h.replace(/<div([^>]*?)\s*\/>/g,'<div$1></div>');
+  h=h.replace(/strokeWidth=/g,'stroke-width=');
+  h=h.replace(/strokeLinecap=/g,'stroke-linecap=');
+  h=h.replace(/strokeLinejoin=/g,'stroke-linejoin=');
+  h=h.replace(/fillRule=/g,'fill-rule=');
+  h=h.replace(/clipRule=/g,'clip-rule=');
+  h=h.replace(/calc\(infinity \* 1px\)/g,'9999px');
+  return h.trim();
+}
+
+const J={};
+J["7MB-0"]=`<div style={{ backgroundColor: '#FFFFFF', boxSizing: 'border-box', fontSize: '12px', fontSynthesis: 'none', lineHeight: '16px', MozOsxFontSmoothing: 'grayscale', overflow: 'clip', position: 'relative', WebkitFontSmoothing: 'antialiased' }}><div style={{ backgroundColor: '#FFFFFF', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', height: '844px', position: 'absolute', width: '390px' }}><div style={{ alignItems: 'center', boxSizing: 'border-box', display: 'flex', flexShrink: '0', height: '48px', justifyContent: 'space-between', paddingLeft: '24px', paddingRight: '24px', paddingTop: '14px' }}><div style={{ boxSizing: 'border-box', color: '#1A1A2E', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '15px', fontWeight: '600', lineHeight: '18px' }}>9:41</div><div style={{ alignItems: 'center', boxSizing: 'border-box', display: 'flex', gap: '6px' }}><svg width="17" height="12" viewBox="0 0 17 12" fill="none"><rect x="0" y="3" width="3" height="9" rx="1" fill="#1A1A2E"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="#1A1A2E"/><rect x="9" y="0" width="3" height="12" rx="1" fill="#1A1A2E"/><rect x="13.5" y="0" width="3" height="12" rx="1" fill="#1A1A2E"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="none"><path d="M7.5 3.5C9.4 3.5 11.1 4.3 12.3 5.5L13.7 4.1C12.1 2.5 9.9 1.5 7.5 1.5S2.9 2.5 1.3 4.1L2.7 5.5C3.9 4.3 5.6 3.5 7.5 3.5Z" fill="#1A1A2E"/><circle cx="7.5" cy="10" r="1.5" fill="#1A1A2E"/><path d="M7.5 6C8.8 6 10 6.5 10.9 7.3L12.3 5.9C11 4.7 9.3 4 7.5 4S4 4.7 2.7 5.9L4.1 7.3C5 6.5 6.2 6 7.5 6Z" fill="#1A1A2E"/></svg><svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x="0.5" y="0.5" width="22" height="12" rx="3.5" stroke="#1A1A2E59"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#1A1A2E"/><path d="M24 4.5V8.5C25.1 8.2 25.1 4.8 24 4.5Z" fill="#1A1A2E66"/></svg></div></div><div style={{ alignItems: 'center', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center', paddingBottom: '48px', paddingLeft: '16px', paddingRight: '16px', paddingTop: '80px' }}><div style={{ alignItems: 'center', backgroundColor: '#D115104D', borderRadius: '20px', boxSizing: 'border-box', display: 'flex', flexShrink: '0', height: '80px', justifyContent: 'center', width: '80px' }}><div style={{ boxSizing: 'border-box', color: '#000000', display: 'inline-block', fontFamily: 'system-ui, sans-serif', fontSize: '36px', lineHeight: '44px' }}>&#x1F6F5;</div></div><div style={{ alignItems: 'center', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '4px' }}><div style={{ alignItems: 'baseline', boxSizing: 'border-box', display: 'flex', gap: '4px' }}><div style={{ boxSizing: 'border-box', color: '#1A1A2E', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '32px', fontWeight: '700', lineHeight: '40px' }}>Jiffy</div><div style={{ boxSizing: 'border-box', color: '#D11510', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '32px', lineHeight: '40px' }}>crew</div></div><div style={{ boxSizing: 'border-box', color: '#71717A', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '14px', lineHeight: '18px' }}>Jiffy Partner App</div></div></div><div style={{ backgroundColor: '#FBFBFB', borderRadius: '16px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '24px', marginLeft: '16px', marginRight: '16px', paddingBlock: '24px', paddingInline: '24px' }}><div style={{ boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '4px' }}><div style={{ boxSizing: 'border-box', color: '#1A1A2E', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '20px', fontWeight: '600', lineHeight: '24px' }}>Enter your mobile number</div><div style={{ boxSizing: 'border-box', color: '#71717A', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '14px', lineHeight: '18px' }}>We'll send you a verification code</div></div><div style={{ boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '8px' }}><div style={{ boxSizing: 'border-box', color: '#71717A', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>Mobile Number</div><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderRadius: '12px', boxSizing: 'border-box', display: 'flex', flexShrink: '0', gap: '12px', height: '52px', paddingInline: '16px' }}><div style={{ boxSizing: 'border-box', color: '#1A1A2E', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '15px', fontWeight: '600', lineHeight: '18px' }}>+91</div><div style={{ backgroundColor: '#E0E0E0', boxSizing: 'border-box', flexShrink: '0', height: '24px', width: '1px' }}></div><div style={{ boxSizing: 'border-box', color: '#B0B5BD', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '15px', lineHeight: '18px' }}>99521 03838</div></div></div><div style={{ alignItems: 'center', backgroundColor: '#2563EB', borderRadius: '28px', boxSizing: 'border-box', display: 'flex', flexShrink: '0', height: '56px', justifyContent: 'center' }}><div style={{ boxSizing: 'border-box', color: '#FFFFFF', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '600', lineHeight: '20px' }}>Send OTP</div></div></div><div style={{ alignItems: 'center', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: '8px', marginTop: 'auto', paddingBottom: '48px', paddingLeft: '16px', paddingRight: '16px', paddingTop: '24px' }}><div style={{ boxSizing: 'border-box', color: '#71717A', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '13px', lineHeight: '16px' }}>By continuing, you agree to our</div><div style={{ boxSizing: 'border-box', color: '#2563EB', display: 'inline-block', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>Terms of Service &amp; Privacy Policy</div></div></div></div>`;
+
+J["2CD-0"]=`<div style={{ backgroundColor: '#FFFFFF', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', fontSize: '12px', height: '844px', overflow: 'clip', width: '390px' }}><div style={{ alignItems: 'center', boxSizing: 'border-box', display: 'flex', flexShrink: '0', height: '48px', justifyContent: 'space-between', paddingBottom: '8px', paddingLeft: '24px', paddingRight: '24px', paddingTop: '14px' }}><div style={{ color: '#000000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '15px', lineHeight: '18px' }}>9:41</div><div style={{ display: 'flex', gap: '5px' }}></div></div><div style={{ alignItems: 'center', display: 'flex', flexShrink: '0', gap: '16px', height: '48px', paddingInline: '20px' }}><div style={{ alignItems: 'center', backgroundColor: '#F5F5F7', borderRadius: '18px', display: 'flex', flexShrink: '0', height: '36px', justifyContent: 'center', width: '36px' }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></div><div style={{ color: '#000000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '600', lineHeight: '24px' }}>Select Language</div></div><div style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '16px' }}><div style={{ color: '#000000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '24px', fontWeight: '700', letterSpacing: '-0.5px', lineHeight: '32px' }}>Choose your language</div><div style={{ color: '#999999', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '14px', lineHeight: '20px', marginTop: '4px' }}>You can change this later in Settings</div></div><div style={{ backgroundColor: '#FBFBFB', borderRadius: '16px', display: 'flex', flexDirection: 'column', marginLeft: '20px', marginRight: '20px', marginTop: '24px', overflow: 'clip', paddingBlock: '2px', width: '349px' }}><div style={{ alignItems: 'center', backgroundColor: '#FFFFFF', borderColor: '#2663EB', borderRadius: '16px', borderStyle: 'solid', borderWidth: '2px', display: 'flex', height: '63px', justifyContent: 'space-between', paddingBlock: '16px', paddingInline: '20px', width: '349px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '600' }}>English</div><div style={{ alignItems: 'center', backgroundColor: '#2663EB', borderRadius: '12px', display: 'flex', height: '24px', justifyContent: 'center', width: '24px' }}><div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', height: '8px', width: '8px' }}></div></div></div><div style={{ alignSelf: 'stretch', borderBottomColor: '#EBEBEB', borderBottomStyle: 'solid', borderBottomWidth: '1px', display: 'flex', justifyContent: 'space-between', paddingBlock: '16px', paddingInline: '20px' }}><div style={{ display: 'flex', gap: '8px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '500' }}>Hindi</div><div style={{ color: '#999', fontSize: '14px' }}>\u0939\u093F\u0928\u094D\u0926\u0940</div></div><div style={{ borderColor: '#E0E0E0', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', height: '24px', width: '24px' }}></div></div><div style={{ alignSelf: 'stretch', borderBottomColor: '#EBEBEB', borderBottomStyle: 'solid', borderBottomWidth: '1px', display: 'flex', justifyContent: 'space-between', paddingBlock: '16px', paddingInline: '20px' }}><div style={{ display: 'flex', gap: '8px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '500' }}>Kannada</div><div style={{ color: '#999', fontSize: '14px' }}>\u0C95\u0CA8\u0CCD\u0CA8\u0CA1</div></div><div style={{ borderColor: '#E0E0E0', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', height: '24px', width: '24px' }}></div></div><div style={{ alignSelf: 'stretch', borderBottomColor: '#EBEBEB', borderBottomStyle: 'solid', borderBottomWidth: '1px', display: 'flex', justifyContent: 'space-between', paddingBlock: '16px', paddingInline: '20px' }}><div style={{ display: 'flex', gap: '8px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '500' }}>Tamil</div><div style={{ color: '#999', fontSize: '14px' }}>\u0BA4\u0BAE\u0BBF\u0BB4\u0BCD</div></div><div style={{ borderColor: '#E0E0E0', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', height: '24px', width: '24px' }}></div></div><div style={{ alignSelf: 'stretch', display: 'flex', justifyContent: 'space-between', paddingBlock: '16px', paddingInline: '20px' }}><div style={{ display: 'flex', gap: '8px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '500' }}>Telugu</div><div style={{ color: '#999', fontSize: '14px' }}>\u0C24\u0C46\u0C32\u0C41\u0C17\u0C41</div></div><div style={{ borderColor: '#E0E0E0', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', height: '24px', width: '24px' }}></div></div></div><div style={{ flexBasis: '0%', flexGrow: '1', flexShrink: '1' }}></div><div style={{ paddingBottom: '24px', paddingLeft: '20px', paddingRight: '20px' }}><div style={{ alignItems: 'center', backgroundColor: '#2563EB', borderRadius: '28px', display: 'flex', height: '56px', justifyContent: 'center' }}><div style={{ color: '#FFFFFF', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '600' }}>Continue</div></div></div></div>`;
+
+J["2CE-0"]=`<div style={{ backgroundColor: '#FFFFFF', display: 'flex', flexDirection: 'column', height: '844px', overflow: 'clip', width: '390px' }}><div style={{ alignItems: 'center', display: 'flex', height: '48px', justifyContent: 'space-between', paddingBottom: '8px', paddingLeft: '24px', paddingRight: '24px', paddingTop: '14px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '15px' }}>9:41</div><div style={{ display: 'flex', gap: '5px' }}></div></div><div style={{ alignItems: 'center', display: 'flex', gap: '16px', height: '48px', paddingInline: '20px' }}><div style={{ alignItems: 'center', backgroundColor: '#F5F5F7', borderRadius: '18px', display: 'flex', height: '36px', justifyContent: 'center', width: '36px' }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></div><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '600' }}>OTP Verification</div></div><div style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '16px' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '24px', fontWeight: '700', lineHeight: '32px' }}>Enter OTP</div><div style={{ color: '#999', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '14px', lineHeight: '20px', marginTop: '4px' }}>OTP sent to +91 99521 03838</div></div><div style={{ display: 'flex', gap: '8px', marginLeft: '24px', marginRight: '24px', marginTop: '24px' }}><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderColor: '#9CBEFE', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', display: 'flex', flexBasis: '0%', flexGrow: '1', height: '56px', justifyContent: 'center' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '24px', fontWeight: '600' }}>4</div></div><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderColor: '#9CBEFE', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', display: 'flex', flexBasis: '0%', flexGrow: '1', height: '56px', justifyContent: 'center' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '24px', fontWeight: '600' }}>7</div></div><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderColor: '#9CBEFE', borderRadius: '12px', borderStyle: 'solid', borderWidth: '2px', display: 'flex', flexBasis: '0%', flexGrow: '1', height: '56px', justifyContent: 'center' }}><div style={{ color: '#000', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '24px', fontWeight: '600' }}>2</div></div><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderRadius: '12px', display: 'flex', flexBasis: '0%', flexGrow: '1', height: '56px', justifyContent: 'center' }}><div style={{ backgroundColor: '#000', height: '24px', width: '2px' }}></div></div><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderRadius: '12px', display: 'flex', flexBasis: '0%', flexGrow: '1', height: '56px', justifyContent: 'center' }}></div><div style={{ alignItems: 'center', backgroundColor: '#F3F3F5', borderRadius: '12px', display: 'flex', flexBasis: '0%', flexGrow: '1', height: '56px', justifyContent: 'center' }}></div></div><div style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '16px' }}><div style={{ color: '#999', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '14px', textAlign: 'center' }}>Didn't receive OTP? Resend OTP</div><div style={{ color: '#C0C0C0', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '13px', marginTop: '4px', textAlign: 'center' }}>3 resend attempts remaining</div></div><div style={{ flexGrow: '1' }}></div><div style={{ paddingInline: '20px' }}><div style={{ alignItems: 'center', backgroundColor: '#2563EB', borderRadius: '28px', display: 'flex', height: '56px', justifyContent: 'center', opacity: '0.3' }}><div style={{ color: '#FFF', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '16px', fontWeight: '600' }}>Verify</div></div></div><div style={{ paddingBottom: '24px', paddingLeft: '24px', paddingRight: '24px', paddingTop: '16px' }}><div style={{ color: '#C0C0C0', fontFamily: 'Onest, system-ui, sans-serif', fontSize: '12px', lineHeight: '18px', textAlign: 'center' }}>By continuing, you agree to our Terms of Service and Privacy Policy</div></div></div>`;
+
+// For screens 4-23, we use placeholder cards since the full JSX is too large to inline
+// The visual screenshots were captured from Paper at 2x scale
+const placeholderScreens = {
+  "2CF-0": {title:"Basic Information", subtitle:"STEP 2 OF 8 -- Personal Details", fields:["Full Name: Rajiv Kumar","Phone: +91 99521 03838","DOB: 15/08/1995","Gender: Male","Blood Group","Shipsy Rider ID","Preferred Store","Preferred Rider Type"]},
+  "7NG-0": {title:"Your Role", subtitle:"Welcome to Jiffy Crew!", desc:"Rider -- Flex scheduling with Block, Shift & Pattern options. Full KYC verification required.", emoji:"&#x1F6F5;"},
+  "7OJ-0": {title:"Service Agreement", subtitle:"Master Service Agreement", desc:"JIFFY CREW RIDER SERVICE AGREEMENT -- Nature of Engagement, Obligations, Earnings & Payouts"},
+  "7PT-0": {title:"Referral Code", subtitle:"Have a referral code?", desc:"Enter the code shared by an existing rider (optional)", buttons:["Skip","Apply Code"]},
+  "7QW-0": {title:"Pancard Verification", subtitle:"STEP 6 OF 8 -- Enter PAN card Details", fields:["PAN Number: ABCDE1234F","Upload PAN Card Images: Front Side / Back Side"]},
+  "2PY-0": {title:"Emergency Contact", subtitle:"STEP 4 OF 8 -- Emergency Contact Details", fields:["Contact Name: Suman Kumar","Relationship: Brother","Phone: +91 88765 43210","Alternate Phone: Optional"]},
+  "2PZ-0": {title:"Selfie Verification", subtitle:"STEP 5 OF 8 -- Take a selfie for verification", desc:"Position your face in the circle. Make sure your face is clearly visible with good lighting."},
+  "2Q0-0": {title:"Aadhaar Verification", subtitle:"STEP 6 OF 8 -- Enter Aadhaar Details", fields:["Aadhaar Number: 4532 ---- --89","Name: Rajiv Kumar","Upload: Front / Back uploaded"]},
+  "2Q1-0": {title:"Vehicle Details", subtitle:"STEP 7 OF 8 -- Vehicle Information", fields:["Vehicle Type: Bike","Model: Hero Splendor Plus","Registration: KA-01-AB-1234","Docs: RC uploaded, Insurance, DL"]},
+  "2Q2-0": {title:"Bank Account", subtitle:"STEP 8 OF 8 -- Bank Account Details", fields:["Holder: Rajiv Kumar","Account: --------7890","IFSC: SBIN0001234","Bank: State Bank of India","Status: Bank account verified successfully"]},
+  "FDS-0": {title:"Home Location", subtitle:"STEP 8 OF 8 -- Home Location", desc:"Tap to set your home location. This helps assign you to nearby stores. Use Aadhaar Address Instead."},
+  "2Q3-0": {title:"Registration Fee", subtitle:"One-time fee", fields:["Registration Fee: Rs.199","Delivery Kit: Rs.500","T-Shirt (2x): Rs.200","Raincoat: Rs.100","Total: Rs.999"], color:"#00A344", btn:"Confirm & Continue"},
+  "84T-0": {title:"Payment Successful", desc:"Your registration deposit of Rs.500 has been received.", fields:["Transaction ID: TXN2026031900123","Amount Paid: Rs.500","Payment Method: UPI"], emoji:"&#x2705;", color:"#00A344"},
+  "84S-0": {title:"Insurance Activated", subtitle:"You're Covered from Day 1", fields:["Personal Accident: Rs.5,00,000","Medical Expenses: Up to Rs.50,000","Hospital Cash: Rs.500/day","OPD Cover: Rs.5,000/year","Cash Theft/Robbery: Up to Rs.5,000","Third-Party Liability: Up to Rs.1,00,000"], emoji:"&#x1F6E1;", color:"#00A344"},
+  "7U2-0": {title:"Training Hub", subtitle:"Complete Your Training", desc:"7 modules -- ~35 minutes total", fields:["1. Platform Overview ~5 min","2. Order Workflow ~5 min","3. COD & Cash Handling ~6 min","4. Block & Shift Booking ~4 min","5. Navigation & Delivery ~4 min","6. Safety & Compliance ~5 min","7. Earnings & Support ~4 min"]},
+  "7U3-0": {title:"Training Quiz", subtitle:"Question 1 of 12 -- 80% to pass", desc:"When your COD balance exceeds your threshold, what must you do?", fields:["Ignore it and continue deliveries","Deposit the cash at your assigned store or via UPI (selected)","Keep the cash until end of week","Transfer to another rider"]},
+  "7XQ-0": {title:"Collect Your Uniform", subtitle:"Almost Ready!", fields:["Assigned Store: Indiranagar 12th Main","Items to Collect: T-Shirt, Cap, Bag","Store Hours: 8 AM - 10 PM"], emoji:"&#x1F454;", btn:"I've Collected My Uniform"},
+  "7XR-0": {title:"Book Your First Shift", subtitle:"Book a Walk-in Shift", desc:"As a New tier rider, you start with Walk-in shifts", fields:["Today: 2:00 PM - 6:00 PM (selected)","Today: 6:00 PM - 10:00 PM","Tomorrow: 8:00 AM - 12:00 PM","Tomorrow: 12:00 PM - 4:00 PM"]},
+  "7XS-0": {title:"You're All Set!", desc:"Your first shift is booked. Head to your assigned store and start delivering!", fields:["First Shift: Today 2:00 PM - 6:00 PM","Location: Indiranagar 12th Main"], emoji:"&#x1F389;", color:"#00A344", btn:"Go to Dashboard"},
+  "2CG-0": {title:"Under Review", desc:"Your application is being reviewed. This usually takes 24-48 hours.", fields:["Personal Details -- Done","Document Verification -- Done","Selfie Verification -- Done","Background Check -- In Progress","Account Activation -- Pending"], color:"#FF6D00"}
+};
+
+function makePlaceholder(id, label, data) {
+  const bg = data.color || '#2563EB';
+  let html = '<div style="display:flex;flex-direction:column;height:100%;background:#fff;font-family:Onest,system-ui,sans-serif;padding:0;">';
+  // Status bar
+  html += '<div style="display:flex;justify-content:space-between;padding:14px 24px 8px;font-size:15px;font-weight:600;color:#1A1A2E;"><span>9:41</span><span style="font-size:12px;">&#x1F4F6; &#x1F4F6; &#x1F50B;</span></div>';
+  // Nav
+  html += '<div style="display:flex;align-items:center;gap:16px;padding:8px 16px;"><div style="width:36px;height:36px;border-radius:18px;background:#F5F5F7;display:flex;align-items:center;justify-content:center;font-size:16px;">&lt;</div><div style="font-size:18px;font-weight:600;color:#1A1A2E;">' + (data.title || label) + '</div></div>';
+  // Content
+  html += '<div style="flex:1;padding:16px 16px 0;">';
+  if (data.emoji) html += '<div style="text-align:center;font-size:48px;margin:24px 0 16px;">' + data.emoji + '</div>';
+  if (data.subtitle) html += '<div style="font-size:14px;color:#71717A;margin-bottom:4px;">' + data.subtitle + '</div>';
+  if (data.title && !data.emoji) html += '<div style="font-size:20px;font-weight:600;color:#1A1A2E;margin-bottom:8px;">' + data.title + '</div>';
+  if (data.desc) html += '<div style="font-size:14px;color:#71717A;line-height:20px;margin-bottom:16px;">' + data.desc + '</div>';
+  if (data.fields) {
+    html += '<div style="background:#FBFBFB;border-radius:12px;padding:12px 16px;">';
+    data.fields.forEach(f => {
+      html += '<div style="padding:10px 0;border-bottom:1px solid #EBEBEB;font-size:13px;color:#1A1A2E;">' + f + '</div>';
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+  // Button
+  html += '<div style="padding:16px 16px 32px;"><div style="background:' + bg + ';border-radius:28px;height:56px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:600;">' + (data.btn || 'Continue') + '</div></div>';
+  html += '</div>';
+  return html;
+}
+
+const grid = document.getElementById('grid');
+screens.forEach((s,i) => {
+  const card = document.createElement('div');
+  card.className = 'screen-card';
+  card.innerHTML = '<div class="screen-label">'+(i+1)+'. '+s.label+'</div><div class="screen-id">'+s.id+'</div>';
+  const frame = document.createElement('div');
+  frame.className = 'phone-frame';
+  const content = document.createElement('div');
+  content.className = 'screen-content';
+  if (J[s.id]) {
+    content.innerHTML = c(J[s.id]);
+  } else if (placeholderScreens[s.id]) {
+    content.innerHTML = makePlaceholder(s.id, s.label, placeholderScreens[s.id]);
+  } else {
+    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;background:#f8f8fa;"><div style="text-align:center;font-size:18px;font-weight:600;color:#1A1A2E;">'+s.label+'<br><span style="font-size:13px;color:#999;">'+s.id+'</span></div></div>';
+  }
+  frame.appendChild(content);
+  card.appendChild(frame);
+  grid.appendChild(card);
+});
+</script>
+</body>
+</html>
